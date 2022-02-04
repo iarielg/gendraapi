@@ -1,7 +1,6 @@
 
 # Project Gendra
 
-Una API para movimientos en bancos
 ## Tecnologias utilizadas
 
 MySQL Gradle SpringBoot con las siguientes dependecias: 
