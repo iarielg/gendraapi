@@ -11,5 +11,5 @@ import java.util.Optional;
 
 @Repository
 public interface SuggestionsRepository extends JpaRepository<Suggestions, Long> {
-
+    public abstract List<Suggestions> findByNameAndLatitudeAndLongitude(String name, double latitude, double longitude);
 }//Interface Suggestions

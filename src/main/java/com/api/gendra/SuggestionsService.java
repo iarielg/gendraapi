@@ -2,6 +2,7 @@ package com.api.gendra;
 
 import com.api.gendra.model.Suggestions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -38,5 +39,9 @@ public class SuggestionsService {
             return false;
         }//tryCatch
     }//deleteId
+
+    public List<Suggestions> findByNameAndLatitudeAndLongitude(String name, double latitude, double longitude){
+        return suggestionsRepository.findByNameAndLatitudeAndLongitude(name,latitude, longitude);
+    }//filterFindByName...
 
 }//class SuggestionsService

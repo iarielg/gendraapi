@@ -1,5 +1,6 @@
 package com.api.gendra.controller;
 
+import com.api.gendra.SuggestionsRepository;
 import com.api.gendra.SuggestionsService;
 import com.api.gendra.model.Suggestions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,12 @@ public class SuggestionsController {
         }//if
     }//deleteById
 
+    @GetMapping("/q")
+    public List<Suggestions> findByNameAndLatitudeAndLongitude(@RequestParam("name") String name,
+                                                               @RequestParam("latitude") double latitude,
+                                                               @RequestParam("longitude") double longitude){
+        return this.suggestionsService.findByNameAndLatitudeAndLongitude(name, latitude, longitude);
+    }
 
 
 }//class SuggestionsController
